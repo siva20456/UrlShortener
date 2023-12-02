@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+  <body>
+    <div class="login-page">
+      <div *ngIf="isLogin" class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3>LOGIN</h3>
+          </div>
+        </div>
+        <form (ngSubmit)="userLogin()" class="login-form">
+          <input [(ngModel)]="username" name="username" type="text" placeholder="username"/>
+          <input [(ngModel)]="password" name="password" type="password" placeholder="password"/>
+          <button>login</button>
+          <p class="message">Not registered? <a (click) = "TurnSignUp()" style="cursor: pointer;">Create an account</a></p>
+        </form>
+      </div>
+      <div *ngIf="isSignUp" class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3>Sign Up</h3>
+          </div>
+        </div>
+        <form (ngSubmit)="userRegister()" class="login-form">
+          <input [(ngModel)]="username" name="username" type="text" placeholder="username"/>
+          <input [(ngModel)]="password" name="password" type="password" placeholder="password"/>
+          <input [(ngModel)]="variablePass" name="variablePass" type="password" placeholder="confirm password"/>
+          <button>Register</button>
+          <p class="message">Already had account? <a (click) = "TurnSignUp()" style="cursor: pointer;">Login</a></p>
+        </form>
+      </div>
+    </div>
+</body>
+</html>
