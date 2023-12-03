@@ -38,6 +38,8 @@ export default class HomeComponentComponent {
         const { error } = e
         alert(error.error)
       }
+      this.url = ''
+      this.website = ''
   }
   
 }

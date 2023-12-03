@@ -35,6 +35,7 @@ export class RedirectComponent implements OnInit  {
       console.log(e)
       const { error } = e
       alert(error.error)
+      this.router.navigate(['/home'])
     }
 
   }
