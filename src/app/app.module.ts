@@ -7,20 +7,27 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponentComponent } from './landing-component/landing-component.component';
-import { HomeComponentComponent } from './home-component/home-component.component';
+import HomeComponentComponent from './home-component/home-component.component';
+import { HeaderComponent } from './header/header.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { RedirectComponent } from './redirect/redirect.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponentComponent,
-    HomeComponentComponent
+    HomeComponentComponent,
+    HeaderComponent,
+    AnalyticsComponent,
+    RedirectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    // CookieService
   ],
   providers: [],
   bootstrap: [AppComponent]

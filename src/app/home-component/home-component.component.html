@@ -1,1 +1,39 @@
-<p>home-component works!</p>
+<div>
+    <app-header></app-header>
+    <div class="home-cont">
+        <div class="container">
+            <div class="text">
+                Add New URL Shortcut
+            </div>
+            <form action="#">
+                <div class="form-row">
+                    <div class="input-data">
+                        <input [(ngModel)]="url" name="url" type="text" required>
+                        <div class="underline"></div>
+                        <label for="">URL/Route Name</label>
+                    </div>
+                    <div class="input-data">
+                        <input [(ngModel)]="website" name="website" type="text" required>
+                        <div class="underline"></div>
+                        <label for="">Website URL</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-data textarea">
+                        <!-- <textarea rows="8" cols="80" ></textarea>
+                        <br />
+                        <div class="underline"></div>
+                        <label for="">Additional Information</label>
+                        <br /> -->
+                        <div class="form-row submit-btn">
+                            <div class="input-data">
+                                <div class="inner"></div>
+                                <input (click)="AddUrl()" type="submit" value="Add">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

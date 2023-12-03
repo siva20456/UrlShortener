@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -15,7 +16,14 @@ export class LandingComponentComponent {
   password: string = '';
   variablePass: string = '';
 
-  constructor(private dataService: DataService, private router: Router) { }
+  constructor(private dataService: DataService, private router: Router, private cookies: CookieService) { }
+
+  ngOnInit():void{
+    const jwt = this.cookies.get('jwt');
+    if(jwt !== ''){
+      this.router.navigate(['/home'])
+    }
+  }
 
   userLogin = async (): Promise<any> => {
     console.log(this.username, this.password)
@@ -23,6 +31,7 @@ export class LandingComponentComponent {
     try {
       const data = await this.dataService.UserLogin(dataToPost).toPromise()
       console.log(data)
+      this.cookies.set('jwt', data.jwt_token)
       this.router.navigate(['/home'])
     } catch (e: any) {
       console.log(e)
@@ -41,6 +50,7 @@ export class LandingComponentComponent {
       try {
         const data = await this.dataService.UserRegistration(dataToPost).toPromise()
         console.log(data)
+        this.cookies.set('jwt', data.jwt_token)
         this.router.navigate(['/home'])
       } catch (e: any) {
         console.log(e, 'err2')
