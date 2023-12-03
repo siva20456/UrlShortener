@@ -1,7 +1,26 @@
-<<<<<<< HEAD
+
 # UrlShortener
 =======
 # UrlShortenerFrontend
+
+#Introduction
+
+UrlShortener is a URL shortening process involves taking a long URL and creating a shorter alias or redirect link.
+
+## Features
+
+- Feature 1 - Login / Logout Functionalities
+- Feature 2 - Shortening URL with shorter target routes
+- Feature 3 - Access to the analytics of links created
+
+## Installation & Getting started
+Detailed instructions on how to install, configure, and get the project running.
+
+``` 
+ng new my-project
+cd my-project
+ng serve 
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
@@ -25,7 +44,14 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## API Calls 
+POST /api/AddUrl - Add Shortened URLs to DB.
+GET /api/analytics - Get Anlytics of URLs created by user.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
->>>>>>> 047b7bd (In Angular Project Added Landing Page)
+## Technology Stack
+
+- Angular.js
+- Typescript
+- HTML
+- CSS
+- Other libraries/modules
